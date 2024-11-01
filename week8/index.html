@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Trivia!</title>
+    <script>
+        // Function to check the answer for the multiple choice question
+        function checkMultipleChoice(answer) {
+            const correctAnswer = "b"; // Change this to the correct answer identifier
+            const resultText = document.getElementById("mc-result");
+            const buttons = document.querySelectorAll(".mc-button");
+
+            buttons.forEach(button => {
+                button.disabled = true; // Disable buttons after one is clicked
+                if (button.id === answer) {
+                    button.style.backgroundColor = (answer === correctAnswer) ? "green" : "red";
+                } else {
+                    button.style.backgroundColor = (button.id === correctAnswer) ? "green" : "red";
+                }
+            });
+
+            resultText.innerHTML = (answer === correctAnswer) ? "Correct!" : "Incorrect";
+        }
+
+        // Function to check the answer for the free response question
+        function checkFreeResponse() {
+            const correctAnswer = "Jupiter"; // Change this to the correct answer
+            const userAnswer = document.getElementById("free-response").value.trim();
+            const resultText = document.getElementById("fr-result");
+            const inputField = document.getElementById("free-response");
+
+            if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+                inputField.style.backgroundColor = "green";
+                resultText.innerHTML = "Correct!";
+            } else {
+                inputField.style.backgroundColor = "red";
+                resultText.innerHTML = "Incorrect";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Trivia!</h1>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Part 1: Multiple Choice </h2>
+
+            <h3>What is the capital of France?</h3>
+            <button id="a" class="mc-button" onclick="checkMultipleChoice('a')">London</button>
+            <button id="b" class="mc-button" onclick="checkMultipleChoice('b')">Paris</button>
+            <button id="c" class="mc-button" onclick="checkMultipleChoice('c')">Berlin</button>
+            <button id="d" class="mc-button" onclick="checkMultipleChoice('d')">Madrid</button>
+            <p id="mc-result"></p>
+        </div>
+
+        <div class="section">
+            <h2>Part 2: Free Response</h2>
+            <hr>
+            <h3>What is the largest planet in our solar system?</h3>
+            <input type="text" id="free-response" placeholder="Type your answer here...">
+            <button onclick="checkFreeResponse()">Submit</button>
+            <p id="fr-result"></p>
+        </div>
+    </div>
+</body>
+</html>

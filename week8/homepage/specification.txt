@@ -1,0 +1,20 @@
+HTML Tags Used:
+1. <html>
+2. <head>
+3. <body>
+4. <title>
+5. <h1>
+6. <h2>
+7. <p>
+8. <nav>
+9. <ul>
+10. <form>
+
+CSS Properties Used:
+1. background-color
+2. color
+3. font-size
+4. margin
+5. padding
+
+JavaScript Usage: Used JavaScript to create an interactive button that displays an alert when clicked.

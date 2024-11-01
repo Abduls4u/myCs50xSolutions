@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: It showed the best result when sorted and similar time values for reversed and random.
+
+sort2 uses: merge sort
+
+How do you know?: It was the fastest of all, and it showed similar time values for all test cases regardless of the size of the problem.
+
+sort3 uses: selection sort
+
+How do you know?: It was the second best, and it showed similar time values for all test cases regardless of the size of the problem.
